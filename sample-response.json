@@ -1,0 +1,51 @@
+{
+    "status" : "success",
+    "message" : "",
+    "http_code" : 200,
+    "data" : {
+      "type" : "messages",
+      "list_item_type" : "message",
+      "size" : 3,
+      "items" : [ {
+        "type" : "message",
+        "view_href" : "/t5/PTC-Mathcad-Questions/What-country-am-I-from/td-p/1817",
+        "subject" : "What country am I from?",
+        "board" : {
+          "type" : "board",
+          "view_href" : "/t5/PTC-Mathcad-Questions/bd-p/PTCMathcad",
+          "title" : "PTC Mathcad Questions"
+        },
+        "post_time_friendly" : "Oct 26, 2022",
+        "replies" : {
+          "count" : 1
+        }
+      }, {
+        "type" : "message",
+        "view_href" : "/t5/AK-Test-Board/Move-Me/td-p/1239",
+        "subject" : "Move Me",
+        "board" : {
+          "type" : "board",
+          "view_href" : "/t5/AK-Test-Board/bd-p/aktestboard",
+          "title" : "AK Test Board"
+        },
+        "post_time_friendly" : "Jun 16, 2021",
+        "replies" : {
+          "count" : 1
+        }
+      }, {
+        "type" : "message",
+        "view_href" : "/t5/AK-Test-Board/Image-Testing/td-p/1107",
+        "subject" : "Image Testing",
+        "board" : {
+          "type" : "board",
+          "view_href" : "/t5/AK-Test-Board/bd-p/aktestboard",
+          "title" : "AK Test Board"
+        },
+        "post_time_friendly" : "Jan 19, 2021",
+        "replies" : {
+          "count" : 5
+        }
+      } ]
+    },
+    "metadata" : { }
+  }

@@ -1,0 +1,1 @@
+SELECT subject, view_href, board.title, board.view_href, replies.count(*), post_time_friendly FROM messages WHERE depth = 0 AND conversation.solved = false AND author.id = '250' AND conversation.style='forum' AND board.id != 'abusereports' AND replies.count(*)>0 LIMIT 5
