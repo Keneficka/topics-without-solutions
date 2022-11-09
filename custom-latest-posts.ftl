@@ -11,8 +11,8 @@
     <div class="tab-container-ak" id="first-tab-ak">
         <a href="#" class="latest-posts-tab-ak tab-ak" id="active-tab-ak">Latest Posts by ${userName}</a>
         <a href="#" class="no-solution-tab-ak tab-ak" id="inactive-tab-ak">Unsolved Posts</a>
-        <a href="/t5/forums/recentpostspage/post-type/message/user-id/${userId}" target="_blank" class="view-more-ak latest-view-more-ak" id="active-view-more-ak">View More</a>
-        <a href="#" class="view-more-ak unsolved-view-more-ak" id="inactive-view-more-ak">View More</a>
+        <a href="/t5/forums/recentpostspage/post-type/message/user-id/${userId}" target="_blank" class="view-more-ak latest-view-more-ak" id="active-view-more-ak">View More Recent Posts</a>
+        <a href="/t5/custom/page/page-id/unsolvedpostpage/user-id/${userId}" target="_blank" class="view-more-ak unsolved-view-more-ak" id="inactive-view-more-ak">View More Unsolved Posts</a>
     </div>
 
     <div class="tab-content-ak" id="no-adjustment-ak">
@@ -203,6 +203,12 @@
 
         .no-unsolved-message-ak {
             padding: 2px 15px;
+        }
+
+        @media screen and (max-width: 768px) {
+            #active-view-more-ak {
+                display: none;
+            }
         }
     </style>
 
