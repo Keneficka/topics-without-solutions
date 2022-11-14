@@ -4,3 +4,6 @@ SELECT subject, view_href, board.title, board.view_href, replies.count(*), post_
 Custom page
 unsolvedpostpage
 /t5/custom/page/page-id/unsolvedpostpage
+
+Board list Setting
+custom.unsolved_board_list

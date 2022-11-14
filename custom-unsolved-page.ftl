@@ -1,11 +1,20 @@
 <#assign userId = webuisupport.path.rawParameters.name.get('user-id', '250') />
 <#assign userName = liql("SELECT login FROM users WHERE id = '${userId}'").data.items[0].login />
 
-<#assign count = liql("SELECT count(*) FROM messages WHERE depth = 0 AND conversation.solved = false AND author.id = '${userId}' AND conversation.style='forum' AND board.id != 'abusereports' AND replies.count(*)>0").data.count />
+<#--GET LIST OF BOARDS-->
+    <#assign boardListSetting = settings.name.get("custom.unsolved_board_list", "")?trim />
+    <#assign boardListSplit = boardListSetting?split(",") />
+    <#assign boardListIds = "'" + boardListSplit?join("','") + "'" />
+
+
+<#assign count = liql("SELECT count(*) FROM messages WHERE depth = 0 AND conversation.solved = false AND author.id = '${userId}' AND conversation.style='forum' AND board.id IN (${boardListIds}) AND replies.count(*)>0").data.count />
 <#assign results_list_size = 10 />
 <#assign page_number = webuisupport.path.rawParameters.name.get('page', '1')?number />
 <#assign offSet = results_list_size * (page_number - 1) />
-<#assign resp = liql("SELECT subject, view_href, board.title, board.view_href, replies.count(*), post_time FROM messages WHERE depth = 0 AND conversation.solved = false AND author.id = '${userId}' AND conversation.style='forum' AND board.id != 'abusereports' AND replies.count(*)>0 LIMIT ${results_list_size} OFFSET ${offSet}").data />
+
+
+
+<#assign resp = liql("SELECT subject, view_href, board.title, board.view_href, replies.count(*), post_time FROM messages WHERE depth = 0 AND conversation.solved = false AND author.id = '${userId}' AND conversation.style='forum' AND board.id IN (${boardListIds}) AND replies.count(*)>0 LIMIT ${results_list_size} OFFSET ${offSet}").data />
 
 <#--PAGE TITLE-->
     <div class="lia-page-header">

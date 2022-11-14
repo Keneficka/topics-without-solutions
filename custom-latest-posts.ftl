@@ -4,7 +4,14 @@
 <#if userInfo.messages.count gt 0 >
 
     <#assign userName = userInfo.login />
-    <#assign resp = liql("SELECT subject, view_href, board.title, board.view_href, replies.count(*), post_time FROM messages WHERE depth = 0 AND conversation.solved = false AND author.id = '${userId}' AND conversation.style='forum' AND board.id != 'abusereports' AND replies.count(*)>0 LIMIT 5").data />
+
+    <#--GET LIST OF BOARDS-->
+    <#assign boardListSetting = settings.name.get("custom.unsolved_board_list", "")?trim />
+    <#assign boardListSplit = boardListSetting?split(",") />
+    <#assign boardListIds = "'" + boardListSplit?join("','") + "'" />
+
+
+    <#assign resp = liql("SELECT subject, view_href, board.title, board.view_href, replies.count(*), post_time FROM messages WHERE depth = 0 AND conversation.solved = false AND author.id = '${userId}' AND conversation.style='forum' AND board.id IN (${boardListIds}) AND replies.count(*)>0 LIMIT 5").data />
 
 
     <#--TABS AND VIEW MORE LINKS-->

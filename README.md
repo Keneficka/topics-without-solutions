@@ -6,3 +6,6 @@ This is for the Khoros community platform. It includes a tabbed component for th
 
 ## Custom Page
 **custom-unsolved-page.ftl** is a custom component that should be added to a one column custom page named **unsolvedpostpage**
+
+## Admin Setting
+Both the profile page component and the custom page use a custom setting added by Khoros support named **custom.unsolved_board_list** which holds a comma seperated list of board IDs to include.
