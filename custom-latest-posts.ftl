@@ -62,14 +62,14 @@
                                                                 <div class="MessageSubjectIcons ">
                                                                     <h2 itemprop="name" class="message-subject">
                                                                         <span class="lia-message-read">
-                                                                            <a class="page-link lia-link-navigation lia-custom-event" id="link_20" href="${post.view_href}">
+                                                                            <a class="page-link lia-link-navigation lia-custom-event" href="${post.view_href}">
                                                                                 ${post.subject}                      
                                                                             </a>               
                                                                         </span>
                                                                     </h2>
                                                                 </div>
                                                                 <div class="message-subject-board">
-                                                                    <a class="local-time xsmall-text lia-link-navigation" id="link_21" href="${post.board.view_href}">
+                                                                    <a class="local-time xsmall-text lia-link-navigation" href="${post.board.view_href}">
                                                                         ${post.board.title}
                                                                     </a>
                                                                 </div>
